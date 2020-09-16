@@ -16,27 +16,63 @@ class ViewController: UIViewController {
         showQuestion()
     }
     
+    //
+    override func viewWillAppear(_ animated: Bool) {
+        //まずquestionsの配列を空に
+        questions = []
+        
+        //UserDefaultsがnilでなければ
+        if UserDefaults.standard.object(forKey: "questions") != nil{
+            //questionsに  型の指定String:Any  で取ってこれた
+            questions = UserDefaults.standard.object(forKey: "questions") as! [[String:Any]]
+        }
+        //初期画面に問題を表示
+        showQuestion()
+        
+    }
+    
     //問題表示
     @IBOutlet var questionLabel: UILabel!
     
     //問題番号INT型の変数
     var currentQuestionNum = 0
     
+    var questions : [[String:Any]] = []
     //辞書型 true.falseに分ける
-    let questions:[[String:Any]] = [
-        ["question":"コーラは美味い","answer":true],
-        ["question":"鶏肉は美味い","answer":true],
-        ["question":"パセリは美味い","answer":false]
-    ]
+//    let questions:[[String:Any]] = [
+//        ["question":"コーラは美味い","answer":true],
+//        ["question":"鶏肉は美味い","answer":true],
+//        ["question":"パセリは美味い","answer":false]
+//    ]
     
     func showQuestion(){
-        //問題文[何番目]ですか？
-        let question = questions[currentQuestionNum]
-        //もしquestionがStringならばQuetionLabelにTextを表示しなさい
-        //as?Stringはお作法
-        if let que = question["question"] as? String {
-            questionLabel.text = que
+        
+        //もし 問題の数 > 問題番号INT型の変数 なら
+        if questions.count > currentQuestionNum{
+            
+            //問題文[何番目]ですか？
+            let question = questions[currentQuestionNum]
+            
+            //もしquestionがStringならばQuetionLabelにTextを表示しなさい
+            //as?Stringはお作法
+            if let que = question["question"] as? String {
+                //問題文の表示
+                questionLabel.text = que
+                //ボタン使える
+                batuButton.isEnabled = true
+                maruButton.isEnabled = true
+            }
+            
+        }else{
+            //問題文が表示されない
+            
+            questionLabel.text = "問題を作ってください"
+            //ボタン使えない
+            batuButton.isEnabled = false
+            maruButton.isEnabled = false
+            
         }
+        
     }
     
     //答えがあっているかの確認するための関数(ボタンに引用する)  引数
@@ -84,6 +120,13 @@ class ViewController: UIViewController {
         //アニメーション決め
         present(alert, animated: true, completion: nil)
     }
+    
+    
+    @IBOutlet var batuButton: UIButton!
+    
+    
+    @IBOutlet var maruButton: UIButton!
+    
     
     
     @IBAction func batuButton(_ sender: Any) {
