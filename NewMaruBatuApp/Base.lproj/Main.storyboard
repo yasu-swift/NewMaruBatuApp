@@ -104,17 +104,33 @@
                                 <state key="normal" title="問題を作成">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="questionCreate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ov-d0-Iva"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jr9-Cc-UQe">
+                                <rect key="frame" x="10" y="54" width="60" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="9ic-EZ-yX4"/>
+                                    <constraint firstAttribute="height" constant="35" id="nh6-2N-uxl"/>
+                                </constraints>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="backButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c1c-YJ-JPz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hFq-qP-8dG" secondAttribute="bottom" constant="20" id="3JG-vq-9Lm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kcQ-xs-gfl" secondAttribute="bottom" constant="20" id="72k-t0-fJY"/>
+                            <constraint firstItem="jr9-Cc-UQe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="A40-TT-GOt"/>
                             <constraint firstItem="WJW-nE-jac" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="NH0-9L-Fwd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WJW-nE-jac" secondAttribute="trailing" constant="20" id="bZ7-ui-hoi"/>
                             <constraint firstItem="j8R-7l-DH8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cq4-it-usQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hFq-qP-8dG" secondAttribute="trailing" constant="20" id="dgW-RL-lOw"/>
                             <constraint firstItem="WJW-nE-jac" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gCs-Gi-TOt"/>
+                            <constraint firstItem="jr9-Cc-UQe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="nfV-K8-ifd"/>
                             <constraint firstItem="j8R-7l-DH8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uBl-NI-OeB"/>
                             <constraint firstItem="kcQ-xs-gfl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zCd-qD-WJw"/>
                         </constraints>
@@ -128,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-393" y="225"/>
+            <point key="canvasLocation" x="-523" y="225"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="xc6-nP-ucg">
@@ -212,7 +228,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FWS-TQ-WdR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-393" y="-621"/>
+            <point key="canvasLocation" x="-523" y="-620"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0eB-sa-2rc">
+            <objects>
+                <viewController id="8qe-my-Yo8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qlL-O4-p1v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="McX-1t-xBe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MBE-jO-jYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="583" y="-194"/>
         </scene>
     </scenes>
 </document>

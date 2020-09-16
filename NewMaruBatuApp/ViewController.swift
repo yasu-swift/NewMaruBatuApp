@@ -89,6 +89,7 @@ class ViewController: UIViewController {
                 
             }else{
                 //不正解
+                currentQuestionNum += 1
                 //下の関数
                 shwoAlert(message: "不正解")
             }
@@ -100,7 +101,7 @@ class ViewController: UIViewController {
         //もしcurrentQuestionNum >= questions.countなら
         if currentQuestionNum >= questions.count {
             //currentQuestionNumを0にします
-            currentQuestionNum = 0
+//            currentQuestionNum = 0
         }
         
         //問題の表示
@@ -141,6 +142,20 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func backButton(_ sender: Any) {
+        //戻る
+        self.dismiss(animated: true, completion: nil)
+
+    }
+    
+    
+    @IBAction func questionCreate(_ sender: Any) {
+        //画面遷移
+        let storyboard: UIStoryboard = self.storyboard!
+        let addQ = storyboard.instantiateViewController(withIdentifier: "questionView")
+        self.present(addQ,animated: true,completion: nil)
+        
+    }
     
 
 }
