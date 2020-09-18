@@ -36,6 +36,9 @@ class ViewController: UIViewController {
     
     //問題番号INT型の変数
     var currentQuestionNum = 0
+    var trueNum = 0
+    var falseNum = 0
+    
     
     var questions : [[String:Any]] = []
     //辞書型 true.falseに分ける
@@ -74,9 +77,11 @@ class ViewController: UIViewController {
         }
         
     }
-    
+//    var count = 0
     //答えがあっているかの確認するための関数(ボタンに引用する)  引数
     func checAnswer(userAnswer:Bool){
+        //変数名UserDefaults.standardを短くするため
+//                   let userDefaults = UserDefaults.standard
         //格納して
         let question = questions[currentQuestionNum]
         if let ans = question["answer"] as? Bool {
@@ -84,25 +89,45 @@ class ViewController: UIViewController {
             //正解
             if userAnswer == ans{
                 currentQuestionNum += 1
+                trueNum += 1
+                //保存
+//                userDefaults.set(questions,forKey: "questions")
                 //下の関数
                 shwoAlert(message: "正解")
+//                print(trueNum, falseNum)
+                
                 
             }else{
+                
                 //不正解
                 currentQuestionNum += 1
+                falseNum += 1
+                //保存
+//                userDefaults.set(questions,forKey: "questions")
                 //下の関数
                 shwoAlert(message: "不正解")
+                
+                                
+//                print(trueNum, falseNum)
             }
         }else{
+            
             //それ以外
             print("答えがありません")
             return
         }
         //もしcurrentQuestionNum >= questions.countなら
-        if currentQuestionNum >= questions.count {
-            //currentQuestionNumを0にします
-//            currentQuestionNum = 0
-        }
+//        if currentQuestionNum >= questions.count {
+//
+//            //画面遷移
+//            let storyboard: UIStoryboard = self.storyboard!
+//            let addQ = storyboard.instantiateViewController(withIdentifier: "answerView")
+//            self.present(addQ,animated: true,completion: nil)
+//
+//
+//            //currentQuestionNumを0にします
+////            currentQuestionNum = 0
+//        }
         
         //問題の表示
         //正解だったら次の問題が表示される
@@ -115,12 +140,33 @@ class ViewController: UIViewController {
         //アラートのタイトル・messageはボタンの所で決めるためmessageにしてる、最後のはアラートのスタイル決めalertはシンプルなもの
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         //アラートのアクション決め、ここは固定
-        let close = UIAlertAction(title: "閉じる", style: .cancel, handler: nil)
+//        let close = UIAlertAction(title: "閉じる", style: .cancel, handler: nil)
+        
+        var close = UIAlertAction(title: "閉じる", style: .cancel, handler: nil)
+        
+        if currentQuestionNum >= questions.count {
+                   
+                   close = UIAlertAction(title: "閉じる", style: .cancel, handler: {(action:UIAlertAction!)in
+                       
+                       UserDefaults.standard.set(self.trueNum, forKey: "countKey")
+//                    UserDefaults.standard.set(self.falseNum, forKey: "countKey")
+                    print(self.trueNum,self.falseNum)
+                           let storyboard: UIStoryboard = self.storyboard!
+                           let nextView = storyboard.instantiateViewController(withIdentifier: "answerView")as! AnswerViewController
+                           self.present(nextView, animated: true, completion: nil)
+                   })
+               }
+        
+        
+        
         //
         alert.addAction(close)
         //アニメーション決め
         present(alert, animated: true, completion: nil)
     }
+    
+    
+    
     
     
     @IBOutlet var batuButton: UIButton!
@@ -151,9 +197,9 @@ class ViewController: UIViewController {
     
     @IBAction func questionCreate(_ sender: Any) {
         //画面遷移
-        let storyboard: UIStoryboard = self.storyboard!
-        let addQ = storyboard.instantiateViewController(withIdentifier: "questionView")
-        self.present(addQ,animated: true,completion: nil)
+//        let storyboard: UIStoryboard = self.storyboard!
+//        let addQ = storyboard.instantiateViewController(withIdentifier: "questionView")
+//        self.present(addQ,animated: true,completion: nil)
         
     }
     

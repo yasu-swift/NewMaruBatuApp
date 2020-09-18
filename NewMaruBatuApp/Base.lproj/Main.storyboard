@@ -230,20 +230,62 @@
             </objects>
             <point key="canvasLocation" x="-523" y="-620"/>
         </scene>
-        <!--View Controller-->
+        <!--Answer View Controller-->
         <scene sceneID="0eB-sa-2rc">
             <objects>
-                <viewController id="8qe-my-Yo8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="answerView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8qe-my-Yo8" customClass="AnswerViewController" customModule="NewMaruBatuApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qlL-O4-p1v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa0-6r-ETB">
+                                <rect key="frame" x="20" y="64" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="3yN-2q-HMk"/>
+                                    <constraint firstAttribute="height" constant="40" id="PZw-uZ-V9p"/>
+                                </constraints>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="backButton:" destination="8qe-my-Yo8" eventType="touchUpInside" id="LqZ-gz-dRO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="結果発表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ee-bJ-55B">
+                                <rect key="frame" x="60" y="200" width="295" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ax-P9-4qw">
+                                <rect key="frame" x="10" y="682" width="394" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="MnP-CY-Dyh"/>
+                                    <constraint firstAttribute="width" constant="250" id="QxL-bR-wBT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wa0-6r-ETB" firstAttribute="top" secondItem="McX-1t-xBe" secondAttribute="top" constant="20" id="6mQ-AI-IEb"/>
+                            <constraint firstItem="1ax-P9-4qw" firstAttribute="leading" secondItem="McX-1t-xBe" secondAttribute="leading" constant="10" id="Gyb-ni-wip"/>
+                            <constraint firstItem="McX-1t-xBe" firstAttribute="bottom" secondItem="1ax-P9-4qw" secondAttribute="bottom" constant="80" id="UpN-gV-Uin"/>
+                            <constraint firstItem="McX-1t-xBe" firstAttribute="trailing" secondItem="1ax-P9-4qw" secondAttribute="trailing" constant="10" id="qm2-wN-jct"/>
+                            <constraint firstItem="1ax-P9-4qw" firstAttribute="centerX" secondItem="qlL-O4-p1v" secondAttribute="centerX" id="riL-Yi-4HU"/>
+                            <constraint firstItem="wa0-6r-ETB" firstAttribute="leading" secondItem="McX-1t-xBe" secondAttribute="leading" constant="20" id="sBq-0B-g4g"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="McX-1t-xBe"/>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="1ax-P9-4qw" id="CHm-8C-Y7C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MBE-jO-jYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583" y="-194"/>
+            <point key="canvasLocation" x="582.60869565217399" y="-194.19642857142856"/>
         </scene>
     </scenes>
 </document>

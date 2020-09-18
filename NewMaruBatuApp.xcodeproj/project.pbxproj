@@ -15,6 +15,7 @@
 		D9194A392510EDC400F1D0CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9194A372510EDC400F1D0CF /* LaunchScreen.storyboard */; };
 		D961606325122856002B12F7 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961606225122856002B12F7 /* QuestionViewController.swift */; };
 		D961606525124C62002B12F7 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D961606425124C62002B12F7 /* TopViewController.swift */; };
+		D96160672512559F002B12F7 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96160662512559F002B12F7 /* AnswerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D9194A3A2510EDC400F1D0CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D961606225122856002B12F7 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		D961606425124C62002B12F7 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		D96160662512559F002B12F7 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				D9194A302510EDC300F1D0CF /* ViewController.swift */,
 				D961606225122856002B12F7 /* QuestionViewController.swift */,
 				D961606425124C62002B12F7 /* TopViewController.swift */,
+				D96160662512559F002B12F7 /* AnswerViewController.swift */,
 				D9194A322510EDC300F1D0CF /* Main.storyboard */,
 				D9194A352510EDC400F1D0CF /* Assets.xcassets */,
 				D9194A372510EDC400F1D0CF /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96160672512559F002B12F7 /* AnswerViewController.swift in Sources */,
 				D9194A312510EDC300F1D0CF /* ViewController.swift in Sources */,
 				D9194A2D2510EDC300F1D0CF /* AppDelegate.swift in Sources */,
 				D961606325122856002B12F7 /* QuestionViewController.swift in Sources */,
